@@ -1,7 +1,7 @@
 #include "functions.h"
 
 #include "../redisclient.h"
-
+//TEST
 void test_cluster_dbsize(redis::client & c)
 {
   redis::client::int_type count;
