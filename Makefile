@@ -11,7 +11,7 @@ LIBNAME = libredisclient.a
 
 TESTAPP = test_client
 TESTAPPOBJS = test_client.o test_lists.o test_sets.o test_zsets.o test_hashes.o test_cluster.o test_distributed_strings.o test_distributed_ints.o test_distributed_mutexes.o test_generic.o benchmark.o functions.o
-TESTAPPLIBS = $(LIBNAME) -lstdc++ -lpthread -lboost_thread-mt
+TESTAPPLIBS = $(LIBNAME) -lstdc++ -lpthread -lboost_signals -lboost_thread-mt
 
 all: $(LIBNAME) $(TESTAPP)
 

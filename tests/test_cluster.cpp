@@ -36,33 +36,33 @@ boost::shared_ptr<redis::client> init_cluster_client()
     /// DB0
     redis::connection_data con;
     con.host = host;
-    con.port = 6379;
-    con.dbindex = 14;
+    con.port = 30001;
+    //con.dbindex = 14;
     redis_server.push_back(con);
   }
   {
     /// DB1
     redis::connection_data con;
     con.host = host;
-    con.port = 6380;
-    con.dbindex = 14;
+    con.port = 30002;
+    //con.dbindex = 14;
     redis_server.push_back(con);
   }
   {
     /// DB2
     redis::connection_data con;
     con.host = host;
-    con.port = 6381;
-    con.dbindex = 14;
+    con.port = 30003;
+    //con.dbindex = 14;
     redis_server.push_back(con);
   }
   {
     /// DB3
-    redis::connection_data con;
-    con.host = host;
-    con.port = 6382;
-    con.dbindex = 14;
-    redis_server.push_back(con);
+    //redis::connection_data con;
+    //con.host = host;
+    //con.port = 6382;
+    //con.dbindex = 14;
+    //redis_server.push_back(con);
   }
 
   boost::shared_ptr<redis::client> cluster(

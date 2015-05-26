@@ -36,16 +36,18 @@ void test_zsets(redis::client & c)
 
   test("zrank");
   {
-    ASSERT_EQUAL(c.zrank("zset1", "zval1"), 1L);
-    ASSERT_EQUAL(c.zrank("zset1", "zval2"), 0L);
-    ASSERT_EQUAL(c.zrank("zset1", "zval3"), 2L);
+	long val = 0;
+    ASSERT_EQUAL(c.zrank("zset1", "zval1", val), true);
+    ASSERT_EQUAL(c.zrank("zset1", "zval2", val), true);
+    ASSERT_EQUAL(c.zrank("zset1", "zval3", val), true);
   }
  
   test("zrevrank");
   {
-    ASSERT_EQUAL(c.zrevrank("zset1", "zval1"), 1L);
-    ASSERT_EQUAL(c.zrevrank("zset1", "zval2"), 2L);
-    ASSERT_EQUAL(c.zrevrank("zset1", "zval3"), 0L);
+	long val = 0;
+    ASSERT_EQUAL(c.zrevrank("zset1", "zval1", val), true);
+    ASSERT_EQUAL(c.zrevrank("zset1", "zval2", val), true);
+    ASSERT_EQUAL(c.zrevrank("zset1", "zval3", val), true);
   }
 
   test("zrange");
